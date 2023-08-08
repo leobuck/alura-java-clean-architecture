@@ -15,12 +15,6 @@ class TelefoneTest {
 		assertThrows(IllegalArgumentException.class,
 				() -> new Telefone("1", "34550101"));
 	}
-
-	@Test
-	void deveCriarTelefonesComDddsValidos() {
-		Telefone telefone = new Telefone("19", "34550101");
-		assertNotNull(telefone);
-	}
 	
 	@Test
 	void naoDeveriaCriarTelefonesComNumerosInvalidos() {
@@ -29,15 +23,16 @@ class TelefoneTest {
 		assertThrows(IllegalArgumentException.class, 
 				() -> new Telefone("19", ""));
 		assertThrows(IllegalArgumentException.class, 
-				() -> new Telefone("19", "123456789"));
+				() -> new Telefone("19", "15478"));
 	}
 	
 	@Test
-	void deveCriarTelefonesComNumerosValidos() {
-		Telefone telefone1 = new Telefone("19", "991234567");
-		assertNotNull(telefone1);
+	void deveriaPermitirCriarTelefoneComDDDENumeroValidos() {
+		String ddd = "11";
+		String numero = "123456789";
 		
-		Telefone telefone2 = new Telefone("19", "34550101");
-		assertNotNull(telefone2);
+		Telefone telefone = new Telefone(ddd, numero);
+		assertEquals(ddd, telefone.getDdd());
+		assertEquals(numero, telefone.getNumero());
 	}
 }

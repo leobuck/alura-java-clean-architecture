@@ -17,8 +17,9 @@ class EmailTest {
 	}
 	
 	@Test
-	void deveCriarEmailsComEnderecosValidos() {
-		Email email = new Email("leonardo@email.com");
-		assertNotNull(email);
+	void deveriaPermitirCriarEmailComEnderecoValido() {
+		String endereco = "leo@email.com";
+		Email email = new Email(endereco);
+		assertEquals(endereco, email.getEndereco());
 	}
 }
