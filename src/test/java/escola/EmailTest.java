@@ -15,4 +15,10 @@ class EmailTest {
 		assertThrows(IllegalArgumentException.class, 
 				() -> new Email("emailinvalido"));
 	}
+	
+	@Test
+	void deveCriarEmailsComEnderecosValidos() {
+		Email email = new Email("leonardo@email.com");
+		assertNotNull(email);
+	}
 }
