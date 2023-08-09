@@ -22,27 +22,19 @@ public class Aluno {
 		this.telefones.add(new Telefone(ddd, numero));
 	}
 
-	public CPF getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(CPF cpf) {
-		this.cpf = cpf;
+	public String getCpf() {
+		return cpf.getNumero();
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getEmail() {
+		return email.getEndereco();
 	}
-
-	public Email getEmail() {
-		return email;
-	}
-
-	public void setEmail(Email email) {
-		this.email = email;
+	
+	public List<Telefone> getTelefones() {
+		return telefones;
 	}
 }
